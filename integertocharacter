@@ -1,0 +1,69 @@
+// C++ program to convert number in characters
+#include<bits/stdc++.h>
+using namespace std;
+void NumbertoCharacter(int n)
+{
+	int rev = 0, r = 0;
+
+	// To calculate the reverse of the number
+	while (n > 0) {
+
+		// The remainder will give the last digit of the number
+		r = n % 10;
+		rev = rev * 10 + r;
+		n = n / 10;
+	}
+
+	while (rev > 0) {
+		// Extract the first digit of the reversed number
+		r = rev % 10;
+
+		// Match it with switch case
+		switch (r) {
+		case 1:
+			cout << "one ";
+			break;
+		case 2:
+			cout << "two ";
+			break;
+		case 3:
+			cout << "three ";
+			break;
+		case 4:
+			cout << "four ";
+			break;
+		case 5:
+			cout << "five ";
+			break;
+		case 6:
+			cout << "six ";
+			break;
+		case 7:
+			cout << "seven ";
+			break;
+		case 8:
+			cout << "eight ";
+			break;
+		case 9:
+			cout << "nine ";
+			break;
+		case 0:
+			cout << "zero ";
+			break;
+		default:
+			cout << "inValid ";
+			break;
+		}
+
+		// Divide the number by 10 to get the next number
+		rev = rev / 10;
+	}
+}
+// Driver code
+#include <iostream>
+int main()
+{
+	int n = 12345;
+	NumbertoCharacter(n);
+	return 0;
+}
